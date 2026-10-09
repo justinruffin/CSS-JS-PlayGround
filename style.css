@@ -1,0 +1,42 @@
+/* ****************************************
+
+    MAIN BOILER PLATE STYLING
+
+**************************************** */
+body {
+    background-color: #121212;
+}
+
+.header {
+    color: rgb(211, 211, 211);
+    font-family: "arial", sans-serif;
+    width: 100%;
+    text-align: center;
+    margin: 15px, 0, 50px, 0;
+}
+
+.header h5 {
+    font-family: "Edu QLD Hand", sans-serif;
+}
+
+.boxContainer {
+    justify-content: center;
+}
+
+.row{
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    height: 400px;
+    width: 400px;
+    margin: 15px 15px;
+    border-radius: 10px;
+    border: 2px solid rgba(223, 126, 0, 0.5);
+    box-shadow:
+		0px 4px 5px 0px rgba(226, 209, 195, 0.13),
+		0px 1px 8px 0px rgba(226, 209, 195, 0.13),
+		0px 2px 4px -1px rgba(226, 209, 195, 0.13);
+}
