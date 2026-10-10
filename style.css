@@ -3,6 +3,7 @@
     MAIN BOILER PLATE STYLING
 
 **************************************** */
+
 body {
     background-color: #121212;
 }
@@ -133,4 +134,141 @@ body {
         0 0 8px #00ff15,
         0 0 20px #00ff15,
         0 0 45px #00ff15;
+}
+
+/* ****************************************
+
+    FLOATING BUBBLES
+
+**************************************** */
+
+.floating-bubbles {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(9, 9, 20);
+}
+
+.bubble::before,
+.bubble::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    filter: blur(4px);
+    z-index: 1;
+}
+.bubble::before {
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    left: 45px;
+}
+.bubble::after {
+    top: 80px;
+    left: 80px;
+    width: 20px;
+    height: 20px;
+}
+
+.bubble span {
+    inset: 10px;
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(6px);
+}
+.bubble span:nth-child(1) {
+    border-left: 15px solid #0fb4ff;
+    border-right: 15px solid #ff4484;
+}
+.bubble span:nth-child(2) {
+    border-top: 15px solid #ffeb3b;
+    border-bottom: 15px solid #fff;
+    transform: rotate(320deg);
+}
+.bubble span:nth-child(3) {
+    inset: 30px;
+    border-left: 15px solid #ff4484;
+    filter: blur(12px);
+}
+
+.bubble {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    left: 70px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.15);
+    animation: animate_bubbles 15s ease-in-out infinite;
+    zoom: 0.85;
+}
+.bubble:nth-child(2) {
+    zoom: 0.45;
+    left: -50px;
+    animation: animate_bubbles2 11s ease-in-out -4s infinite;
+}
+.bubble:nth-child(3) {
+    zoom: 0.65;
+    left: 175px;
+    animation: animate_bubbles 8s ease-in-out -6s infinite;
+}
+.bubble:nth-child(4) {
+    zoom: 0.4;
+    left: 125px;
+    top: -270px;
+    animation: animate_bubbles3 10s ease-in-out -7s infinite;
+}
+.bubble:nth-child(5) {
+    zoom: 0.55;
+    left: 425px;
+    top: -570px;
+    animation: animate_bubbles 8s ease-in-out -2s infinite;
+}
+.bubble:nth-child(6) {
+    zoom: 0.4;
+    left: 525px;
+    top: -600px;
+    animation: animate_bubbles2 11s ease-in-out -9s infinite;
+}
+.bubble:nth-child(7) {
+    zoom: 0.85;
+    left: 400px;
+    top: -550px;
+    animation: animate_bubbles3 15s ease-in-out -2s infinite;
+}
+.bubble:nth-child(8) {
+    zoom: 0.15;
+    left: 80%;
+    top: -180%;
+    animation: animate_bubbles2 10s ease-in-out -8s infinite;
+}
+
+@keyframes animate_bubbles {
+    0%,
+    100% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes animate_bubbles2 {
+    0%,
+    100% {
+        transform: translateY(-40px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes animate_bubbles3 {
+    0%,
+    100% {
+        transform: translateY(-80px);
+    }
+    50% {
+        transform: translateY(50px);
+    }
 }
