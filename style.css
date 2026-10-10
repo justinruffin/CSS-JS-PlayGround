@@ -23,20 +23,114 @@ body {
     justify-content: center;
 }
 
-.row{
+.row {
     margin-bottom: 25px;
     display: flex;
     justify-content: center;
 }
 
 .box {
+    display: flex;
     height: 400px;
     width: 400px;
+    justify-content: center;
+    align-items: center;
     margin: 15px 15px;
     border-radius: 10px;
-    border: 2px solid rgba(223, 126, 0, 0.5);
-    box-shadow:
-		0px 4px 5px 0px rgba(226, 209, 195, 0.13),
-		0px 1px 8px 0px rgba(226, 209, 195, 0.13),
-		0px 2px 4px -1px rgba(226, 209, 195, 0.13);
+    border: 2px solid #383838;
+    overflow: hidden;
+}
+
+/* ****************************************
+
+    NEON SIGN
+
+**************************************** */
+
+.neon {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    color: #fff;
+}
+
+.neon-sign {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 200px;
+    font-family: "Tilt Neon", sans-serif;
+    text-align: center;
+    font-size: 75px;
+    line-height: 70px;
+    animation: flicker 10s linear infinite;
+}
+
+/* prettier-ignore */
+@keyframes flicker {
+    0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 66%, 70%, 100% {
+        opacity: 0.99;
+        text-shadow:
+            -1px -1px 0 rgba(255, 255, 255, 0.4),
+            1px -1px 0 rgba(255, 255, 255, 0.4),
+            -1px 1px 0 rgba(255, 255, 255, 0.4),
+            1px 1px 0 rgba(255, 255, 255, 0.4),
+            0 0 4px #fff,
+            0 0 12px #ff2e88,
+            0 0 28px #ff2e88,
+            0 0 60px #ff2e88,
+            0 2px 3px #000;
+    }
+    20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+.line-1 {
+    position: relative;
+    width: 1px;
+    height: 152px;
+    top: 62%;
+    left: 131px;
+    background-color: #383838;
+    z-index: -1;
+}
+
+.neon-star {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 110px !important;
+    transform: rotate(-45deg);
+    text-shadow:
+        0 0 2px #fffb0c,
+        0 0 8px #fffb0c,
+        0 0 20px #fffb0c,
+        0 0 45px #fffb0c;
+}
+
+.neon-snowflake {
+    position: absolute;
+    top: 70%;
+    left: 65%;
+    font-size: 75px !important;
+    text-shadow:
+        0 0 2px #00a2ff,
+        0 0 8px #00a2ff,
+        0 0 20px #00a2ff,
+        0 0 45px #00a2ff;
+}
+
+.neon-joystick {
+    position: absolute;
+    top: 10%;
+    left: 65%;
+    font-size: 75px !important;
+    transform: rotate(-25deg);
+    text-shadow:
+        0 0 2px #00ff15,
+        0 0 8px #00ff15,
+        0 0 20px #00ff15,
+        0 0 45px #00ff15;
 }
