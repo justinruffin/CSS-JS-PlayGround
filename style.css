@@ -145,10 +145,10 @@ body {
     font-size: 120px !important;
     transform: rotate(-25deg);
     text-shadow:
-            0 0 4px #00ff15,
-            0 0 10px #00ff15,
-            0 0 25px #00ff15,
-            0 0 60px #00ff15;
+        0 0 4px #00ff15,
+        0 0 10px #00ff15,
+        0 0 25px #00ff15,
+        0 0 60px #00ff15;
 }
 
 /* prettier-ignore */
@@ -350,5 +350,86 @@ body {
     }
     50% {
         transform: translateY(50px);
+    }
+}
+
+.atom-square {
+    position: relative;
+    height: 400px;
+    width: 400px;
+    background-color: #1a2a3a;
+    display: flex;
+    justify-content: center;
+}
+
+.atom-square p {
+    position: absolute;
+    font-family: "Anta", sans-serif;
+    color: #fff;
+    font-size: 140px;
+    top: -25px;
+}
+
+.atom {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    top: 150px;
+    left: 27px;
+}
+
+.nucleus,
+.orbit,
+.electron {
+    position: absolute;
+    inset: 0px 0px 0px 0px;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.nucleus {
+    width: 10px;
+    height: 10px;
+    background-color: #ffea00;
+}
+
+.orbit {
+    width: 100px;
+    height: 100px;
+    border: 2px #646464 solid;
+    transform-style: preserve-3d;
+    transform: rotateZ(60deg) rotateY(70deg);
+}
+.orbit:nth-child(2) {
+    transform: rotateZ(120deg) rotateY(70deg);
+}
+.orbit:nth-child(3) {
+    transform: rotateZ(180deg) rotateY(70deg);
+}
+
+.electron {
+    width: 5px;
+    height: 5px;
+    background: #ffea00;
+    animation: electronPath 3s linear infinite;
+    transform: translate(50px);
+}
+.electron2 {
+    animation-delay: -1s;
+}
+.electron3 {
+    animation-delay: -2s;
+}
+.electron4 {
+    border-top: #00a2ff;
+    animation-delay: -2s;
+}
+
+@keyframes electronPath{
+    from {
+        transform: rotateZ(0) translate(50px) rotateZ(0) rotateY(-70deg);
+    }
+    to{
+        transform: rotateZ(360deg) translate(50px) rotateZ(-360deg) rotateY(-70deg);
     }
 }
