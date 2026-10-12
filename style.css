@@ -53,39 +53,23 @@ body {
     height: 400px;
     width: 400px;
     color: #fff;
+    background-color: #0f0101;
+}
+
+.neon-shared {
+    position: absolute;
+    font-family: "Tilt Neon", sans-serif;
+    text-align: center;
 }
 
 .neon-sign {
-    position: absolute;
     top: 10%;
     left: 25%;
     width: 200px;
-    font-family: "Tilt Neon", sans-serif;
-    text-align: center;
     font-size: 75px;
     line-height: 70px;
     animation: flicker 10s linear infinite;
-}
-
-/* prettier-ignore */
-@keyframes flicker {
-    0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 66%, 70%, 100% {
-        opacity: 0.99;
-        text-shadow:
-            -1px -1px 0 rgba(255, 255, 255, 0.4),
-            1px -1px 0 rgba(255, 255, 255, 0.4),
-            -1px 1px 0 rgba(255, 255, 255, 0.4),
-            1px 1px 0 rgba(255, 255, 255, 0.4),
-            0 0 4px #fff,
-            0 0 12px #ff2e88,
-            0 0 28px #ff2e88,
-            0 0 60px #ff2e88,
-            0 2px 3px #000;
-    }
-    20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
-        opacity: 0.4;
-        text-shadow: none;
-    }
+    z-index: 1;
 }
 
 .line-1 {
@@ -95,15 +79,19 @@ body {
     top: 62%;
     left: 131px;
     background-color: #383838;
-    z-index: -1;
 }
 
 .neon-star {
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    font-size: 110px !important;
+    top: 5%;
+    font-size: 140px !important;
     transform: rotate(-45deg);
+    animation: flicker4 10s linear infinite;
+}
+
+.neon-moon {
+    top: -20px;
+    left: 75%;
+    font-size: 100px !important;
     text-shadow:
         0 0 2px #fffb0c,
         0 0 8px #fffb0c,
@@ -111,29 +99,121 @@ body {
         0 0 45px #fffb0c;
 }
 
-.neon-snowflake {
-    position: absolute;
+.neon-joystick {
+    top: 30%;
+    left: 75%;
+    font-size: 90px !important;
+    transform: rotate(-25deg);
+    animation: flicker3 15s linear infinite;
+}
+
+.neon-rocket {
+    top: 72%;
+    left: -10px;
+    font-size: 130px !important;
+    transform: rotate(-15deg);
+    animation: flicker2 20s linear infinite;
+}
+
+.neon-diamond {
     top: 70%;
     left: 65%;
-    font-size: 75px !important;
+    font-size: 110px !important;
+    transform: rotate(25deg);
     text-shadow:
         0 0 2px #00a2ff,
-        0 0 8px #00a2ff,
-        0 0 20px #00a2ff,
+        0 0 10px #00a2ff,
+        0 0 25px #00a2ff,
         0 0 45px #00a2ff;
 }
 
-.neon-joystick {
-    position: absolute;
-    top: 10%;
-    left: 65%;
-    font-size: 75px !important;
+.neon-stadia-controller {
+    top: -30px;
+    left: 40%;
+    font-size: 110px !important;
+    transform: rotate(25deg);
+    text-shadow:
+        0 0 2px #8c00ff,
+        0 0 10px #8c00ff,
+        0 0 25px #8c00ff,
+        0 0 45px #8c00ff;
+}
+
+.neon-battery {
+    top: 38%;
+    left: -40px;
+    font-size: 120px !important;
     transform: rotate(-25deg);
     text-shadow:
-        0 0 2px #00ff15,
-        0 0 8px #00ff15,
-        0 0 20px #00ff15,
-        0 0 45px #00ff15;
+            0 0 4px #00ff15,
+            0 0 10px #00ff15,
+            0 0 25px #00ff15,
+            0 0 60px #00ff15;
+}
+
+/* prettier-ignore */
+@keyframes flicker {
+    0%, 19.9%, 22%, 62.9%, 64%, 64.9%, 66%, 70%, 100% {
+        opacity: 0.99;
+        text-shadow:
+            0 0 4px #fff,
+            0 0 12px #fe019a,
+            0 0 28px #fe019a,
+            0 0 60px #fe019a,
+            0 2px 3px #000;
+    }
+    20%, 21.9%, 63%, 63.9%, 65%, 69.9% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+/* prettier-ignore */
+@keyframes flicker2 {
+    0%, 62.9%, 64%, 64.9%, 66%, 100% {
+        opacity: 0.99;
+        text-shadow:
+            0 0 4px #ff0000,
+            0 0 10px #ff0000,
+            0 0 25px #ff0000,
+            0 0 60px #ff0000;
+    }
+    63%, 63.9%, 65% {
+        opacity: 0.5;
+        text-shadow: none;
+    }
+}
+
+/* prettier-ignore */
+@keyframes flicker3 {
+    0%, 62.9%, 64%, 64.9%, 66%, 100% {
+        opacity: 0.99;
+        text-shadow:
+            0 0 4px #00ff15,
+            0 0 10px #00ff15,
+            0 0 25px #00ff15,
+            0 0 60px #00ff15;
+    }
+    63%, 63.9%, 65% {
+        opacity: 0.75;
+        text-shadow: none;
+    }
+}
+
+/* prettier-ignore */
+@keyframes flicker4 {
+    0%, 62.9%, 64%, 64.9%, 66%, 100% {
+        opacity: 0.99;
+        text-shadow:
+            0 0 4px #fffb0c,
+            0 0 10px #fffb0c,
+            0 0 25px #fffb0c,
+            0 0 60px #fffb0c;
+    }
+    63%, 63.9%, 65% {
+        opacity: 0.75;
+        text-shadow: none;
+    }
 }
 
 /* ****************************************
